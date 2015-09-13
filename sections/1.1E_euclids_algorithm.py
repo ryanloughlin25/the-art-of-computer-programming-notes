@@ -8,29 +8,14 @@ def euclid(m, n):
         return euclid(n, r)
 
 class TestEuclid(unittest.TestCase):
+    def test_0(self):
+        self.assertEqual(euclid(6, 8), 2)
 
-    correct = [
-        {
-            'm': 119,
-            'n': 544,
-            'answer': 17,
-        },
-    ]
-    incorrect = [
-        {
-            'm': 119,
-            'n': 544,
-            'answer': 1,
-        },
-    ]
+    def test_1(self):
+        self.assertEqual(euclid(55, 121), 11)
 
-    def test_correct(self):
-        for test in self.correct:
-            self.assertEqual(euclid(test['m'], test['n']), test['answer'])
-
-    def test_incorrect(self):
-        for test in self.incorrect:
-            self.assertNotEqual(euclid(test['m'], test['n']), test['answer'])
+    def test_2(self):
+        self.assertEqual(euclid(119, 544), 17)
 
 if __name__ == '__main__':
     unittest.main()
